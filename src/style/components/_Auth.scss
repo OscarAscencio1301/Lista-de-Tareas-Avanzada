@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.auth__content{
+        display: flex;  
+        max-height: 100vh;
+        flex-direction: row;
+
+        @include telefono() {
+            flex-direction: column;
+        } 
+}
+
+
+
+.auth__imagen{
+    @include telefono() {
+        display: none;
+    }   
+        display: block;
+        background-image: url(../../assets/pexels-karolina-grabowska-4195410.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        flex: 0 0 50%;
+        display: block;
+    }
+
+   
+    
+
+.auth__login{
+        background-color: white;
+        flex: 0 0 50%;
+        max-height: 100vh;
+        height: 100vh;
+    
+    }
+    
+    @include telefono() {
+      flex: 1 0 100%;
+      width: 100%;
+
+    }
+    
+
+.auth__title{
+    font-weight: lighter;
+    font-size: 2rem;
+    color: $color1;
+    text-align: center;
+}
+.auth__input{
+    width: 80%;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.3rem;
+    color: black;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $color1;
+    font-weight: lighter;
+    &::placeholder{
+        color: gray;
+   
+    }
+}
+.auth__form{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.goggle{
+    width: 80%;
+    position: relative;
+}
+.logo__google{
+    height: 100%;
+    width: 9%;
+    position: absolute;
+    left: 0;
+
+    @include telefono() {
+        display: none;
+        }
+    
+}
+
+

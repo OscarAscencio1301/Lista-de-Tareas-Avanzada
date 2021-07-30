@@ -1,0 +1,47 @@
+.notas__totales{
+    width: 100%;
+    overflow: auto;
+
+}
+.nota__individual{
+    background: white;
+    width: 90%;
+    display: block;
+    margin: 0.5rem auto;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover{
+        background: $color3;
+    }
+}
+
+
+.nota__main-content{
+    display: flex;
+}
+
+.nota__ingresar{
+    flex: 0 0 50%;
+}
+
+.nota__cuerpo, .nota__titulo{
+    width: 80%;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.6rem;
+    color: black;
+    border: none;
+    outline: none;
+    font-weight: lighter;
+
+}
+.nota__cuerpo{
+    height: 70vh;
+    font-size: 1.3rem;
+}
