@@ -7,6 +7,6 @@ export const RutaPublica = ({
     ...res
 }) => {
     return (
-      <Route {...res} component={props => !autenticado ? <Redirect to="auth/login" /> : <Component {...props}/>}/>
+      <Route {...res} component={props => !autenticado ? <Component {...props}/> : <Redirect to="/" /> }/>
     )
 }

@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router-dom'
 
 export const RutaPrivada = ({
     autenticado,
-    component: Component,
+    component:Component,
     ...res
 }) => {
     return (

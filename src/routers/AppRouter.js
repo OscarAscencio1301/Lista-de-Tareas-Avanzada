@@ -1,17 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom'
 import { JournalScreen } from '../components/journal/JournalScreen'
 import { InternalRouter } from './InternalRouter'
 import { RutaPrivada } from './RutaPrivada'
 import { RutaPublica } from './RutaPublica'
+import {firebase} from '../firebase/firebase-config'
+import { useDispatch } from 'react-redux'
+import { login } from '../actions/auth'
 
 export const AppRouter = () => {
+    const dispatch = useDispatch()
+    const [espera, setespera] = useState(true);
+    const [autenticado, setautenticado] = useState(false);
+
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if(user?.uid){
+                dispatch(login(user.uid, user.displayName))
+                setautenticado(true)
+            }else{
+                setautenticado(false)
+            }
+            setespera(false)
+        })
+
+    },[dispatch, setespera, setautenticado])
+
+    if(espera) {
+        return (
+            <h1>Espere</h1>
+        )
+    }
     return (
         <Router>
             <div>
                 <Switch>
-                    <RutaPrivada exact path="/" component={JournalScreen} autenticado={true}/>
-                    <RutaPublica path="/auth" component={InternalRouter} autenticado={true}/>
+                    <RutaPrivada exact path="/" component={JournalScreen} autenticado={autenticado}/>
+                    <RutaPublica path="/auth" component={InternalRouter} autenticado={autenticado}/>
                     <Redirect to="/auth/login" />
                 </Switch>
             </div>

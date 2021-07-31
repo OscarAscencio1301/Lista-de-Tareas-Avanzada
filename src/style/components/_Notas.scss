@@ -45,3 +45,17 @@
     height: 70vh;
     font-size: 1.3rem;
 }
+
+.journal__nota-no{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    flex-direction: column;
+    gap: 2rem;
+}
+.notano__title{
+    border-bottom: 1px solid $color1;
+    padding: 1rem;
+    
+}

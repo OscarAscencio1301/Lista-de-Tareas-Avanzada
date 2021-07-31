@@ -31,21 +31,22 @@
     }
 
    
-    
 
-.auth__login{
+    .auth__login{
         background-color: white;
         flex: 0 0 50%;
         max-height: 100vh;
         height: 100vh;
-    
-    }
-    
-    @include telefono() {
-      flex: 1 0 100%;
-      width: 100%;
 
+        @include telefono() {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    
     }
+    
+   
+    
     
 
 .auth__title{
@@ -69,7 +70,16 @@
    
     }
 }
-.auth__form{
+.auth__form-login{
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth__form-register{
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -77,20 +87,9 @@
     align-items: center;
     justify-content: center;
 }
-.goggle{
-    width: 80%;
-    position: relative;
-}
-.logo__google{
-    height: 100%;
-    width: 9%;
-    position: absolute;
-    left: 0;
 
-    @include telefono() {
-        display: none;
-        }
-    
+.goggle{
+    width: 60%;   
 }
 
 
