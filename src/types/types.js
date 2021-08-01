@@ -17,4 +17,6 @@ export const types = {
     actualizarNota: '[notas] Actualizar Nota',
     cargarNotas: '[notas] Cargar Notas',
     activanota: '[notas] Nota Activa',
+    actualizarImagen: '[notas] Actualizar Imagen',
+    limpiarNotas: '[notas] Limpieza Cerrar Sesion'
 }

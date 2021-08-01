@@ -52,7 +52,7 @@ export const LoginScreen = () => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="boton boton-1">
+                    className="boton boton-1 animate__animated animate__fadeInLeft">
                     Iniciar Sesión
                 </button>
 
@@ -68,7 +68,7 @@ export const LoginScreen = () => {
     
             <button
                     onClick={iniciarGoogle}
-                    className="boton boton-goole">
+                    className="boton boton-goole animate__animated animate__fadeInLeft">
                     Iniciar Sesión con Google
                 
             </button>

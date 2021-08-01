@@ -7,6 +7,8 @@ import { RutaPublica } from './RutaPublica'
 import {firebase} from '../firebase/firebase-config'
 import { useDispatch } from 'react-redux'
 import { login } from '../actions/auth'
+import { cargarNotas } from '../actions/notas'
+
 
 export const AppRouter = () => {
     const dispatch = useDispatch()
@@ -15,10 +17,11 @@ export const AppRouter = () => {
 
 
     useEffect(() => {
-        firebase.auth().onAuthStateChanged((user) => {
+        firebase.auth().onAuthStateChanged(async(user) => {
             if(user?.uid){
                 dispatch(login(user.uid, user.displayName))
                 setautenticado(true)
+                dispatch(cargarNotas(user.uid))
             }else{
                 setautenticado(false)
             }

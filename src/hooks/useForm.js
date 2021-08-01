@@ -15,6 +15,11 @@ export const useForm = (valoresIniciales = {}) => {
         setvalores(valoresIniciales)
     }
 
-    return [valores, cambioInput, reset]
+    const resetearForm = (nuevoEstado = valoresIniciales) => {
+        setvalores(nuevoEstado)
+
+    }
+
+    return [valores, cambioInput, reset, resetearForm]
     
 }

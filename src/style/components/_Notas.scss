@@ -15,6 +15,7 @@
     text-align: center;
     padding: 0.5rem;
     cursor: pointer;
+    gap: 0.5rem;
 
     &:hover{
         background: $color3;
@@ -24,6 +25,8 @@
 
 .nota__main-content{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nota__ingresar{
@@ -50,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 100vh;
     flex-direction: column;
     gap: 2rem;
 }
@@ -58,4 +61,14 @@
     border-bottom: 1px solid $color1;
     padding: 1rem;
     
+}
+.nota__imagen{
+    width: 75px;
+    height: 75px;
+}
+.nota__imagen-content{
+    width: 10%;
+}
+.imagen__principal{
+    width: 200px;
 }
